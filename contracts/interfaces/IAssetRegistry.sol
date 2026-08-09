@@ -3,7 +3,7 @@ pragma solidity ^0.8.24;
 
 /// @title ABABIL Orbit Asset Registry Interface
 /// @notice Canonical asset identity and protocol-state interface.
-/// @dev This interface does not hold user trading balances.
+/// @dev The registry is non-custodial and never stores user trading balances.
 interface IAssetRegistry {
     enum AssetType {
         NATIVE,
@@ -28,54 +28,52 @@ interface IAssetRegistry {
     }
 
     struct AssetRecord {
-        address assetId;
         AssetType assetType;
         AssetStatus assetStatus;
         VerificationStatus verificationStatus;
-        bytes32 metadataReference;
         uint64 registrationTimestamp;
         uint32 registryVersion;
+        bytes32 metadataReference;
     }
 
     error InvalidAsset();
-    error AssetAlreadyRegistered(address assetId);
-    error AssetNotRegistered(address assetId);
+    error AssetAlreadyRegistered(bytes32 assetKey);
+    error AssetNotRegistered(bytes32 assetKey);
     error UnsupportedAssetType();
-    error InvalidTokenInterface(address assetId);
+    error InvalidTokenInterface(address token);
     error InvalidAssetState();
     error InvalidVerificationState();
-    error TradingNotAllowed(address assetId);
+    error TradingNotAllowed(bytes32 assetKey);
     error Unauthorized();
     error ZeroAddress();
     error MetadataInvalid();
     error NativeAssetAlreadyRegistered();
+    error InvalidTokenCode();
+    error InvalidTokenDecimals();
+    error InvalidStateTransition();
 
     event AssetRegistered(
-        address indexed assetId,
+        bytes32 indexed assetKey,
         AssetType indexed assetType,
+        address indexed token,
         uint64 timestamp
     );
 
-    event AssetValidated(
-        address indexed assetId,
-        uint64 timestamp
-    );
+    event AssetValidated(bytes32 indexed assetKey, uint64 timestamp);
 
     event AssetStatusUpdated(
-        address indexed assetId,
+        bytes32 indexed assetKey,
         AssetStatus indexed previousStatus,
         AssetStatus indexed newStatus,
         bytes32 reasonReference
     );
 
     event VerificationSubmitted(
-        address indexed assetId,
-        bytes32 indexed evidenceReference,
-        uint64 timestamp
+        bytes32 indexed assetKey, bytes32 indexed evidenceReference, uint64 timestamp
     );
 
     event VerificationStatusUpdated(
-        address indexed assetId,
+        bytes32 indexed assetKey,
         VerificationStatus indexed previousStatus,
         VerificationStatus indexed newStatus,
         bytes32 evidenceReference,
@@ -83,33 +81,38 @@ interface IAssetRegistry {
     );
 
     event AssetMetadataUpdated(
-        address indexed assetId,
-        bytes32 indexed metadataReference,
-        uint64 timestamp
+        bytes32 indexed assetKey, bytes32 indexed metadataReference, uint64 timestamp
     );
 
-    function isRegistered(address assetId)
-        external
-        view
-        returns (bool);
+    function nativeAssetKey() external view returns (bytes32);
 
-    function getAsset(address assetId)
-        external
-        view
-        returns (AssetRecord memory);
+    function computeERC20AssetKey(address token) external view returns (bytes32);
 
-    function getAssetStatus(address assetId)
-        external
-        view
-        returns (AssetStatus);
+    function isRegistered(bytes32 assetKey) external view returns (bool);
 
-    function getVerificationStatus(address assetId)
-        external
-        view
-        returns (VerificationStatus);
+    function getAsset(bytes32 assetKey) external view returns (AssetRecord memory);
 
-    function getMetadataReference(address assetId)
+    function getAssetToken(bytes32 assetKey) external view returns (address);
+
+    function getAssetStatus(bytes32 assetKey) external view returns (AssetStatus);
+
+    function getVerificationStatus(bytes32 assetKey) external view returns (VerificationStatus);
+
+    function getMetadataReference(bytes32 assetKey) external view returns (bytes32);
+
+    function getAssetKey(address token) external view returns (bytes32);
+
+    function registerERC20(address token, bytes32 metadataReference)
         external
-        view
-        returns (bytes32);
+        returns (bytes32 assetKey);
+
+    function validateAsset(bytes32 assetKey) external;
+
+    function submitVerification(bytes32 assetKey, bytes32 evidenceReference) external;
+
+    function enableTradingEligibility(bytes32 assetKey) external;
+
+    function suspendAsset(bytes32 assetKey, bytes32 reasonReference) external;
+
+    function delistAsset(bytes32 assetKey, bytes32 reasonReference) external;
 }
