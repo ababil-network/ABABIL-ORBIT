@@ -1,8 +1,8 @@
-# ABABIL Orbit — Architecture Specification v1.0
+# ABABIL DEX — Architecture Specification v1.0
 
 ## 1. Project
 
-ABABIL Orbit is a non-custodial hybrid decentralized exchange
+ABABIL DEX is a non-custodial hybrid decentralized exchange
 designed for ABABIL Network.
 
 Core trading model:
@@ -303,13 +303,13 @@ No silent protocol changes.
 
 ## 19. Original Implementation Policy
 
-ABABIL Orbit will not copy source code from Uniswap, Raydium,
+ABABIL DEX will not copy source code from Uniswap, Raydium,
 Jupiter, dYdX, Curve or other protocols.
 
 Only high-level protocol concepts may be studied.
 
 All implementation decisions must be independently designed,
-documented and tested for ABABIL Orbit.
+documented and tested for ABABIL DEX.
 
 ## 20. Status
 

@@ -1,9 +1,9 @@
-# ABABIL Orbit — Asset Registry Storage Layout v1.0
+# ABABIL DEX — Asset Registry Storage Layout v1.0
 
 ## 1. Purpose
 
 This document defines the initial storage architecture for the
-ABABIL Orbit Asset Registry.
+ABABIL DEX Asset Registry.
 
 The registry is non-custodial and must never store user trading
 balances.

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-/// @title ABABIL Orbit Asset Registry Interface
+/// @title ABABIL DEX Asset Registry Interface
 /// @notice Canonical asset identity and protocol-state interface.
 /// @dev The registry is non-custodial and never stores user trading balances.
 interface IAssetRegistry {

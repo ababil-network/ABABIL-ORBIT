@@ -1,9 +1,9 @@
-# ABABIL Orbit — Asset Registry Specification v1.1
+# ABABIL DEX — Asset Registry Specification v1.1
 
 ## 1. Purpose
 
 The Asset Registry is the canonical registry for assets supported by
-ABABIL Orbit.
+ABABIL DEX.
 
 It provides deterministic asset identity and controlled metadata for
 the Pair Registry, AMM, Order Book, Router, Risk Engine, Verification
@@ -150,7 +150,7 @@ A token can remain Unverified even when it is tradeable.
 
 ## 8. Verification Meaning
 
-Verified means that the token passed the ABABIL Orbit verification
+Verified means that the token passed the ABABIL DEX verification
 criteria at the time of review.
 
 Verified does NOT mean:
@@ -534,11 +534,11 @@ Before production implementation:
 
 ## 28. Original Implementation Policy
 
-ABABIL Orbit will not copy source code from other DEX protocols.
+ABABIL DEX will not copy source code from other DEX protocols.
 
 High-level protocol concepts may be studied, but implementation,
 interfaces and security logic must be independently designed for
-ABABIL Orbit.
+ABABIL DEX.
 
 ## 29. Status
 

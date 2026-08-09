@@ -1,9 +1,9 @@
-# ABABIL Orbit — Native ABABIL Asset Identity v1.0
+# ABABIL DEX — Native ABABIL Asset Identity v1.0
 
 ## 1. Purpose
 
 This document defines the canonical identity of the native ABABIL
-asset inside ABABIL Orbit.
+asset inside ABABIL DEX.
 
 The native asset is not an ERC-20 contract and therefore must not rely
 on an ERC-20 contract address as its canonical identity.

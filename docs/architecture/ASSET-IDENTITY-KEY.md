@@ -1,8 +1,8 @@
-# ABABIL Orbit — Canonical Asset Identity Key v1.0
+# ABABIL DEX — Canonical Asset Identity Key v1.0
 
 ## 1. Purpose
 
-ABABIL Orbit uses a single bytes32 canonical asset key for registry
+ABABIL DEX uses a single bytes32 canonical asset key for registry
 identity.
 
 The key must uniquely represent the asset within the protocol.

@@ -1,8 +1,8 @@
-# ABABIL Orbit — Asset Registry Role Model v1.0
+# ABABIL DEX — Asset Registry Role Model v1.0
 
 ## 1. Purpose
 
-This document defines the authorization boundaries of the ABABIL Orbit
+This document defines the authorization boundaries of the ABABIL DEX
 Asset Registry.
 
 The goal is least-privilege administration without giving any role

@@ -1,4 +1,4 @@
-# ABABIL Orbit — Asset Registry Interface Design v1.0
+# ABABIL DEX — Asset Registry Interface Design v1.0
 
 ## 1. Scope
 
@@ -225,7 +225,7 @@ At minimum, authorization must distinguish between:
 - emergency authority
 - governance/administration
 
-Exact role design will be finalized after reviewing the ABABIL Orbit
+Exact role design will be finalized after reviewing the ABABIL DEX
 governance model.
 
 ## 16. Non-Custodial Requirement

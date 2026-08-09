@@ -1,9 +1,9 @@
-# ABABIL Orbit — Asset Registry v1.2 Final Specification
+# ABABIL DEX — Asset Registry v1.2 Final Specification
 
 ## 1. Purpose
 
 The Asset Registry is the canonical identity and protocol-state
-registry for assets supported by ABABIL Orbit.
+registry for assets supported by ABABIL DEX.
 
 It is non-custodial.
 
@@ -204,7 +204,7 @@ All status changes must be auditable.
 ## 10. Technical Validation
 
 Technical validation determines whether an asset can participate in the
-ABABIL Orbit trading ecosystem.
+ABABIL DEX trading ecosystem.
 
 Validation may examine:
 
@@ -596,7 +596,7 @@ Before implementation:
 
 ## 32. Original Implementation Policy
 
-ABABIL Orbit implementation must be original.
+ABABIL DEX implementation must be original.
 
 High-level concepts from existing protocols may be studied.
 

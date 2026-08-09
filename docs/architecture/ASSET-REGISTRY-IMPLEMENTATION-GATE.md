@@ -1,4 +1,4 @@
-# ABABIL Orbit — Asset Registry Implementation Gate v1.0
+# ABABIL DEX — Asset Registry Implementation Gate v1.0
 
 ## 1. Canonical Asset Key
 
