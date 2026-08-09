@@ -1,0 +1,14 @@
+# Foundry
+/cache/
+/out/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
